@@ -8,10 +8,11 @@ public class Ejer4 {
     Scanner teclado = new Scanner(System.in);
     System.out.println("Introduzca una longitud en millas:");
     int millas = teclado.nextInt();
+    System.out.println();
 
-    System.out.print(millas + "estos millas");
-    System.out.print(" millas son: ");
-    System.out.print(millas * 1609);
-    System.out.println(" metros.");
+    System.out.println(millas + " millas son: " + millas * 1609 + " metros.");
+    //  System.out.print(" millas son: ");
+    // System.out.print(millas * 1609);
+    // System.out.println(" metros.");
   }
 }
