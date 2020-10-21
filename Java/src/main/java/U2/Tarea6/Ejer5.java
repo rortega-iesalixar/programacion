@@ -37,7 +37,7 @@ public class Ejer5 {
         System.out.println("Perímetro = " + (2 * +Math.PI * radio));
         break;
       case 3:
-        System.out.println("Área = " + (+Math.PI * radio * radio));
+        System.out.println("Area = " + (+Math.PI * radio * radio));
         break;
       default:
         System.out.println("No has introducido una opción correcta.");
