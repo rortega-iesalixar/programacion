@@ -17,7 +17,7 @@ public class Ejer15 {
     // 8->no primo
     // Resultado del programa: Entre 1 y 8 hay 5 números primos.
 
-    int num, i, j, num_temp, cont_primo = 0;
+    int num, i, j, num_temp, cont_primo = 0, cuenta_final = 0;
     boolean primo = true;
     Scanner tecl = new Scanner(System.in);
 
@@ -38,17 +38,20 @@ public class Ejer15 {
           cont_primo = 0;
         }
       }
-      System.out.print("Nº:" + i + " -> ");
+      // System.out.print("Nº:" + i + " -> ");
       if (primo == true) {
-        System.out.print("primo.");
-        System.out.println("");
+        // System.out.print("primo.");
+        // System.out.println("");
         cont_primo = 0;
+        cuenta_final++;
       } else {
-        System.out.print("no primo.");
-        System.out.println("");
+        // System.out.print("no primo.");
+        // System.out.println("");
         primo = true;
         cont_primo = 0;
       }
     }
+    System.out.println(
+        "Resultado del programa, entre 1 y " + num + " hay: " + cuenta_final + " números primos.");
   }
 }
