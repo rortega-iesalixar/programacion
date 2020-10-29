@@ -13,8 +13,9 @@ public class Ejer5 {
 
     System.out.println("Introduzca número de filas de la piramide:");
     num_filas = tecl.nextInt();
+    tecl.nextLine();
     System.out.println("Introduzca el carácter para pintar la piramide:");
-    carc_pintar = tecl.next();
+    carc_pintar = tecl.nextLine();
 
     System.out.println();
 
