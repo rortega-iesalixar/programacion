@@ -14,7 +14,7 @@ public class Ejer3 {
     System.out.println("Por favor, introduzca su nombre completo:");
     nombre = sc.nextLine();
 
-    for (int i = 0; i <= nombre.length() - 1; i++) {
+    for (int i = 0; i < nombre.length(); i++) {
       letra = nombre.substring(i, i + 1);
       if (!letra.equalsIgnoreCase("a")
           && !letra.equalsIgnoreCase("e")
@@ -29,6 +29,7 @@ public class Ejer3 {
         nuevo_nombre = nuevo_nombre + letra;
       }
     }
+
     System.out.println("El nuevo nombre es: " + nuevo_nombre);
   }
 }
