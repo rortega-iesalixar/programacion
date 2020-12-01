@@ -26,6 +26,7 @@ public class Ejer4 {
     Scanner sc = new Scanner(System.in);
     int num, num_temp;
     String bomba_vacia = "X-", posicion;
+    boolean bomba = false;
 
     System.out.println("Introduzca tamaño del tablero:");
     num = sc.nextInt();
@@ -41,8 +42,11 @@ public class Ejer4 {
       }
       System.out.println(" ");
     }
-    System.out.println(" ");
-    System.out.println("Introduzca una posición (Ejemplo 1,1):");
-    posicion = sc.nextLine();
+    do {
+      System.out.println(" ");
+      System.out.println("Introduzca una posición (Ejemplo 1,1):");
+      posicion = sc.nextLine();
+
+    } while (bomba == false);
   }
 }
