@@ -24,17 +24,13 @@ public class Ejer3 {
       for (int j = 0; j < array_bi[i].length; j++) {
         array_bi[i][j] = (int) (Math.random() * (200 - 100 + 1) + (100));
         System.out.print(array_bi[i][j] + " ");
+
+        // Al mismo tiempo voy rellenando el segundo array girado 90 grados.
+        array_bi90[j][(array_bi.length - 1) - i] = array_bi[i][j];
       }
       System.out.println("");
     }
 
-    // Rellenamos el segundo girandolo 90 grados.
-    for (int i = 0; i < array_bi.length; i++) {
-      for (int j = 0; j < array_bi[i].length; j++) {
-        array_bi90[j][(array_bi.length - 1) - i] = array_bi[i][j];
-      }
-    }
-    // Por último, mostramos el segundo array ya girado.
     System.out.println("");
     for (int i = 0; i < array_bi90.length; i++) {
       for (int j = 0; j < array_bi90[i].length; j++) {
@@ -42,5 +38,14 @@ public class Ejer3 {
       }
       System.out.println("");
     }
+
+    // Rellenamos el segundo girandolo 90 grados.
+    //    for (int i = 0; i < array_bi.length; i++) {
+    //      for (int j = 0; j < array_bi[i].length; j++) {
+    //        array_bi90[j][(array_bi.length - 1) - i] = array_bi[i][j];
+    //      }
+    //    }
+    // Por último, mostramos el segundo array ya girado.
+
   }
 }

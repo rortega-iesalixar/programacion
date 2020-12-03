@@ -64,101 +64,57 @@ public class Ejer4 {
           System.out.println("");
         }
       }
-    } while (bomba == false);
+    } while (!bomba);
   }
 
   public static int funcion_buscar_bombas(String array[][], int fila, int columna) {
-    int bombas = 0, temp_fila, temp_columna;
+    int contador_bombas = 0;
 
     // Tendríamos que hacer 8 diferentes posibilidades para buscar bombas.
     // 1. Restar fila (Buscar en la casilla de arriba).
-    while (fila != 0) {
-      temp_fila = fila - 1;
-      temp_columna = columna;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if (fila != 0 && array[fila - 1][columna].equals("X")) {
+      contador_bombas++;
     }
+
     // 2. Restar fila y restar columna (Buscar en la casilla superior izquierda)
-    while (fila != 0 && columna != 0) {
-      temp_fila = fila - 1;
-      temp_columna = columna - 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if (fila != 0 && columna != 0 && array[fila - 1][columna - 1].equals("X")) {
+      contador_bombas++;
     }
+
     // 3. Restar columna (buscar en la callida de la izquierda)
-    while (columna != 0) {
-      temp_fila = fila;
-      temp_columna = columna - 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if (columna != 0 && array[fila][columna - 1].equals("X")) {
+      contador_bombas++;
     }
+
     // 4. Sumar fila y restar columna (buscar en la casilla inferior izquierda)
-    while (fila != (array.length - 1) && columna != 0) {
-      temp_fila = fila + 1;
-      temp_columna = columna - 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if ((fila + 1) < array.length && columna != 0 && array[fila + 1][columna - 1].equals("X")) {
+      contador_bombas++;
     }
+
     // 5. Sumar fila (buscar en la casilla de abajo)
-    while (fila != (array.length - 1)) {
-      temp_fila = fila + 1;
-      temp_columna = columna;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if ((fila + 1) < array.length && array[fila + 1][columna].equals("X")) {
+      contador_bombas++;
     }
+
     // 6. Sumar fila y sumar columna (buscar en la casilla inferior derecha)
-    while (fila != (array.length - 1) && columna != (array[fila].length) - 1) {
-      temp_fila = fila + 1;
-      temp_columna = columna + 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if ((fila + 1) < array.length
+        && (columna + 1) < array[fila].length
+        && array[fila + 1][columna + 1].equals("X")) {
+      contador_bombas++;
     }
+
     // 7. Sumar columna (buscar en la casilla de la derecha)
-    while (columna != (array[fila].length - 1)) {
-      temp_fila = fila;
-      temp_columna = columna + 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if ((columna + 1) < array[fila].length && array[fila][columna + 1].equals("X")) {
+      contador_bombas++;
     }
+
     // 8. Restar fila y sumar columna (buscar en la casilla superior derecha)
-    while (fila != 0 && columna != (array[fila].length - 1)) {
-      temp_fila = fila - 1;
-      temp_columna = columna + 1;
-      if (array[temp_fila][temp_columna].equals("X")) {
-        bombas++;
-        break;
-      } else {
-        break;
-      }
+    if (fila != 0
+        && (columna + 1) < array[fila].length
+        && array[fila - 1][columna + 1].equals("X")) {
+      contador_bombas++;
     }
-    return bombas;
+
+    return contador_bombas;
   }
 }

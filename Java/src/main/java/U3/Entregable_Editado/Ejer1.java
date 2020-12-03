@@ -36,7 +36,7 @@ public class Ejer1 {
         primo_encontrado = true;
       }
     }
-    if (primo_encontrado == true) {
+    if (primo_encontrado) {
       return array_primos;
     } else {
       array_primos = Arrays.copyOf(array_primos, array_primos.length + 1);
