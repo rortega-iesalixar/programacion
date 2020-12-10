@@ -9,7 +9,8 @@ public class Ejer3 {
     // las vocales (mayúsculas, minúsculas y acentuadas). El resto de caracteres no se modifican.
 
     Scanner sc = new Scanner(System.in);
-    String nombre, letra, nuevo_nombre = "";
+    String nombre, letra, nuevo_nombre = "", nuevo_nombre2 = "";
+    String quitar_letras = "aeiouAEIOU";
 
     System.out.println("Por favor, introduzca su nombre completo:");
     nombre = sc.nextLine();
@@ -30,6 +31,17 @@ public class Ejer3 {
       }
     }
 
+    for (int i = 0; i < nombre.length(); i++) {
+      letra = nombre.substring(i, i + 1);
+      for (int j = 0; j < quitar_letras.length(); j++) {
+        if (!quitar_letras.substring(j, j + 1).equals(letra)) {
+          nuevo_nombre2 = nuevo_nombre2 + letra;
+          break;
+        }
+      }
+    }
+
     System.out.println("El nuevo nombre es: " + nuevo_nombre);
+    System.out.println("El nuevo nombre es: " + nuevo_nombre2);
   }
 }
