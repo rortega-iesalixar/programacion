@@ -9,21 +9,12 @@ public class main {
   public static void main(String[] args) {
 
     CuentaCorriente c1 = new CuentaCorriente("Rafael Ortega", "10203040Y");
-    CuentaCorriente c2 = new CuentaCorriente(1000);
-    CuentaCorriente c3 = new CuentaCorriente(120, -100, "12454454F");
-
-    c1.ingresar(519);
-
-    if (c1.sacar(60)) {
-      System.out.println("Has podido sacar dinero.");
-    } else {
-      System.out.println("No has podido sacar dinero.");
-    }
 
     c1.mostrar_informacion();
-    c2.mostrar_informacion();
-    c3.mostrar_informacion();
 
-    System.out.println(c3.getSaldo());
+    System.out.println("Y su banco es: " + CuentaCorriente.banco);
+
+    CuentaCorriente.cambiar_banco("Unicaja");
+    System.out.println("Pero su nuevo banco es: " + CuentaCorriente.banco);
   }
 }

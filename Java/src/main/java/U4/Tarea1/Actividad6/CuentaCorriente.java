@@ -1,12 +1,29 @@
-package U4.Tarea1.Actividad4;
+package U4.Tarea1.Actividad6;
 
 public class CuentaCorriente {
-  public static String banco = "BBVA";
+  // public static String banco = "BBVA";
 
   private long saldo;
   private long limite;
   public String nombre;
   String DNI;
+  Banco banco; // Banco de la cuenta corriente.
+
+  // Con este método podemos incluir un Banco.
+  public CuentaCorriente(String nombre, String DNI, Banco banco) {
+    // this.banco = banco;
+    setBanco(banco);
+    setSaldo(0);
+    setLimite(-50);
+    setNombre(nombre);
+    setDNI(DNI);
+  }
+
+  // Modificar Banco de una Cuenta Corriente.
+  public void modificar_Banco(Banco banco) {
+    setBanco(banco);
+    // this.banco = banco;
+  }
 
   public CuentaCorriente(String nombre, String DNI) {
     setSaldo(0);
@@ -24,6 +41,14 @@ public class CuentaCorriente {
     setSaldo(saldo);
     setLimite(limite);
     setDNI(DNI);
+  }
+
+  public Banco getBanco() {
+    return banco;
+  }
+
+  public void setBanco(Banco banco) {
+    this.banco = banco;
   }
 
   public long getSaldo() {
@@ -75,7 +100,14 @@ public class CuentaCorriente {
     }
   }
 
-  void mostrar_informacion() {
+  public void mostrar_informacion() {
+
+    if (banco == null) {
+      System.out.println("La Cuenta Corriente no tiene un Banco vinculado.");
+    } else {
+      banco.Info_Banco();
+    }
+
     System.out.println(
         "El saldo de la cuenta es: "
             + saldo
@@ -85,9 +117,5 @@ public class CuentaCorriente {
             + nombre
             + " y su DNI es: "
             + DNI);
-  }
-
-  static void cambiar_banco(String nuevo_banco) {
-    banco = nuevo_banco;
   }
 }
