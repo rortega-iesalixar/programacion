@@ -11,10 +11,12 @@ package U4.Tarea1.Actividad7;
 public class SintonizadorFM {
   // Atributos.
   double frecuencia;
+  double limite_min = 80;
+  double limite_max = 108;
 
   // Constructor
-  public SintonizadorFM(double frecuencia) {
-    setFrecuencia(80);
+  public SintonizadorFM() {
+    setFrecuencia(80.5);
   }
 
   public double getFrecuencia() {
@@ -22,20 +24,27 @@ public class SintonizadorFM {
   }
 
   public void setFrecuencia(double frecuencia) {
-    this.frecuencia = frecuencia;
+    if (frecuencia <= limite_max && frecuencia >= limite_min) {
+      this.frecuencia = frecuencia;
+    } else if (frecuencia > limite_max) {
+      this.frecuencia = limite_min;
+    } else {
+      this.frecuencia = limite_max;
+    }
   }
+
   // Función para subir Frecuencia sintonizada.
-  public void subir_frecuencia() {
-    //
+  public void up_frecuencia() {
+    setFrecuencia(this.frecuencia + 0.5);
   }
 
   // Función para bajar Frecuencia sintonizada.
-  public void bajar_frecuencia() {
-    //
+  public void down_frecuencia() {
+    setFrecuencia(this.frecuencia - 0.5);
   }
 
   // Para mostrar la frecuencia sintonizada.
   public void display() {
-    System.out.println("La frecuencia sintonizada es: " + frecuencia);
+    System.out.println("La frecuencia sintonizada es: " + this.frecuencia + "MHz");
   }
 }
