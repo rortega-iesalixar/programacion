@@ -17,6 +17,10 @@ public class main {
 
     tren1.add_vagon(1000, 250, "Vinagre");
     tren1.add_vagon(1000, 300, "Aceite");
+    tren1.add_vagon(1000, 350, "Sal");
+    tren1.add_vagon(1000, 400, "Azucar");
+    tren1.add_vagon(1000, 450, "Leche");
+    tren1.add_vagon(1000, 300, "Aceite");
 
     tren1.info_tren();
   }
