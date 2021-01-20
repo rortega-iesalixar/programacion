@@ -5,34 +5,45 @@ public class main {
     // Principal.
 
     Lista l1 = new Lista(); // Lista por defecto tamaño 10.
-    Lista l2 = new Lista(2); // Lista con tamaño definido.
+    Lista l2 = new Lista(4); // Lista con tamaño definido.
 
-    l1.mostrar_lista();
+    l2.insertar_final(4);
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
 
-    l1.insertar_final(4);
-    l1.mostrar_lista();
-    l1.mostrar_elementos();
+    l2.insertar_principio(2);
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
+    l2.insertar_principio(8);
+    l2.insertar_principio(3);
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
 
-    l1.insertar_principio(2);
-    l1.mostrar_lista();
-    l1.mostrar_elementos();
+    l2.insertar_numero(7, 2);
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
 
-    l1.insertar_numero(5, 2);
-    l1.mostrar_lista();
-    l1.mostrar_elementos();
+    l1.insertar_principio(9);
+    l1.insertar_final(8);
+    l1.mostrar_tabla();
+    l2.insert_lista_final(l1.getTabla());
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
 
-    l1.insert_lista_final(l2.getTabla());
-    l1.mostrar_lista();
-    l1.mostrar_elementos();
+    l2.eliminar_elemento(2);
+    l2.mostrar_elementos();
+    l2.mostrar_tabla();
 
-    l1.eliminar_elemento(2);
-    l1.mostrar_lista();
-    l1.mostrar_elementos();
+    l2.obtener_elemento(5);
 
-    l1.obtener_elemento(1);
+    if (l2.buscar_numero(1) == -1) {
+      System.out.println("El número no se encuentra en la lista.");
+    } else {
+      System.out.println("El número se encuentra en el índice: " + l2.buscar_numero(1));
+    }
 
-    l1.buscar_numero(4);
+    // System.out.println("El número se encuentra en el índice: " + l2.buscar_numero(1));
 
-    l1.repr_lista();
+    l2.repr_lista();
   }
 }

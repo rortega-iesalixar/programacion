@@ -23,112 +23,138 @@ import java.util.Arrays;
 
 public class Lista {
   // Atributos.
-  private final int t_defecto = 10;
-  private int tabla[];
+  private final Integer t_defecto = 10;
+  private Integer indice;
+  private Integer tabla[];
 
-  // Constructor con tamaño 10 por defecto.
+  // Constructor con tamaño por defecto.
   public Lista() {
-    this.tabla = new int[t_defecto];
+    this.tabla = new Integer[t_defecto];
+    indice = 0;
   }
   // Constructor 2.
-  public Lista(int tamanio) {
-    this.tabla = new int[tamanio];
+  public Lista(Integer tamanio) {
+    this.tabla = new Integer[tamanio];
+    indice = 0;
+  }
+
+  // Método para ver contenido de la tabla.
+  public void mostrar_tabla() {
+    System.out.println("Contenido de la tabla: " + Arrays.toString(getTabla()));
   }
 
   // Método para comprobar la cantidad de elementos que tiene la tabla.
   public void mostrar_elementos() {
-    System.out.println("La tabla tiene: " + getTabla().length + " elementos.");
-  }
-
-  // Método para mostrar contenido de la lista.
-  public void mostrar_lista() {
-    System.out.println("Contenido de la lista: " + Arrays.toString(getTabla()));
+    System.out.println("La tabla tiene: " + indice + " elemento/s insertado/s en la lista.");
   }
 
   // Método insertar número al final de la lista.
-  public void insertar_final(int num) {
-    this.tabla = Arrays.copyOf(this.tabla, this.tabla.length + 1);
-    this.tabla[tabla.length - 1] = num;
+  public void insertar_final(Integer num) {
+    if (indice <= tabla.length - 1) {
+      tabla[indice] = num;
+      indice++;
+    } else {
+      tabla = Arrays.copyOf(tabla, tabla.length + 1);
+      tabla[indice] = num;
+      indice++;
+    }
   }
 
   // Método insertar número al principio de la lista.
-  public void insertar_principio(int num) {
-    // Primero creamos un nuevo espacio en la lista.
-    this.tabla = Arrays.copyOf(this.tabla, this.tabla.length + 1);
-    // A continuación movemos todos los datos una posición e insertamos al principio el nuevo dato.
-    for (int i = this.tabla.length - 1; i > 0; i--) {
-      this.tabla[i] = this.tabla[i - 1];
+  public void insertar_principio(Integer num) {
+    if (indice == 0) {
+      tabla[indice] = num;
+      indice++;
+    } else if (indice <= tabla.length - 1) {
+      for (int i = indice; i > 0; i--) {
+        tabla[i] = tabla[i - 1];
+      }
+      tabla[0] = num;
+      indice++;
+    } else {
+      tabla = Arrays.copyOf(tabla, tabla.length + 1);
+      for (int i = indice; i > 0; i--) {
+        tabla[i] = tabla[i - 1];
+      }
+      tabla[0] = num;
+      indice++;
     }
-    this.tabla[0] = num;
   }
 
+  // Comprobar si la lista está llena y hacer un solo bucle.
   // Método para insertar número en el índice deseado.
-  public void insertar_numero(int num, int indice) {
-    this.tabla[indice - 1] = num;
+  public void insertar_numero(int num, int ind) {
+    // Compruebo que el índice está dentro del tamaño de la tabla.
+    if (ind >= 0 && ind < tabla.length) {
+
+      // Sí no hay hueco, abro un espacio nuevo.
+      if (indice == tabla.length) {
+        tabla = Arrays.copyOf(tabla, tabla.length + 1);
+      }
+      // Recorro la Lista y muevo las casillas necesarias hacia delante.
+      for (int i = indice; i > ind - 1; i--) {
+        tabla[i] = tabla[i - 1];
+      }
+      tabla[ind - 1] = num;
+      indice++;
+    } else {
+      System.out.println("Índice no valido.");
+    }
   }
 
   // Método para añadir al final de la Lista otra Lista que se le pase.
-  public void insert_lista_final(int[] lista) {
-    // Guardamos la última posición de la lista.
-    int posicion_final = this.tabla.length;
-    // Redimensionamos la Lista que va a absorver a la segunda Lista.
-    this.tabla = Arrays.copyOf(this.tabla, this.tabla.length + lista.length);
-    // Luego rellenamos la lista.
-    int contador = 0;
-    for (int i = posicion_final; i < this.tabla.length; i++) {
-      this.tabla[i] = lista[contador];
-      contador++;
+  public void insert_lista_final(Integer[] lista) {
+    for (int i = 0; i < lista.length; i++) {
+      if (indice == tabla.length) {
+        tabla = Arrays.copyOf(tabla, tabla.length + 1);
+      }
+      tabla[indice] = lista[i];
+      indice++;
     }
   }
 
   // Método para eliminar objeto de la lista que se le pase como índice.
-  public void eliminar_elemento(int indice) {
+  public void eliminar_elemento(int ind) {
     // Copiamos los objetos de la siguiente casilla a la casilla anterior (desde el índice).
-    for (int i = indice - 1; i < this.tabla.length - 1; i++) {
-      this.tabla[i] = this.tabla[i + 1];
+    for (int i = ind - 1; i < tabla.length - 1; i++) {
+      tabla[i] = tabla[i + 1];
     }
     // Redimensionamos la Lista con un elemento menos.
-    this.tabla = Arrays.copyOf(this.tabla, this.tabla.length - 1);
+    tabla = Arrays.copyOf(tabla, tabla.length - 1);
+    indice--;
   }
 
   // Método para obtener el elemento que se le pase como índice.
-  public void obtener_elemento(int indice) {
-    System.out.println(
-        "El elemento que ocupa el índice " + indice + " es: " + this.tabla[indice - 1]);
+  public void obtener_elemento(int ind) {
+    System.out.println("El elemento que ocupa el índice " + ind + " es: " + tabla[ind - 1]);
   }
 
   // Método para buscar un número en la Lista.
-  public void buscar_numero(int num) {
-    boolean encontrado = false;
-    int indice = 0;
-    for (int i = 0; i < this.tabla.length; i++) {
-      if (num == this.tabla[i] && !encontrado) {
-        encontrado = true;
-        indice = i + 1;
+  public Integer buscar_numero(Integer num) {
+    for (Integer i = 0; i < indice; i++) {
+      if (num == tabla[i]) {
+        return i + 1;
       }
     }
-    if (encontrado) {
-      System.out.println("El número " + num + " se encuentra en el índice: " + indice);
-    } else {
-      System.out.println("-1");
-    }
+    return -1;
   }
 
   // Método para representar la lista como una cadena de caracteres (String).
   public void repr_lista() {
     String cadena = "";
-    for (int i = 0; i < this.tabla.length; i++) {
+    for (int i = 0; i < tabla.length; i++) {
       if (i != 0) {
-        cadena = cadena + ", " + this.tabla[i];
+        cadena = cadena + ", " + tabla[i];
       } else {
-        cadena = cadena + this.tabla[i];
+        cadena = cadena + tabla[i];
       }
     }
     System.out.println(cadena);
   }
 
   // Get.
-  public int[] getTabla() {
+
+  public Integer[] getTabla() {
     return tabla;
   }
 }

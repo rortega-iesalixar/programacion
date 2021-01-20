@@ -9,9 +9,11 @@ public class main {
 
     p1.apilar(2);
     p1.apilar(4);
+    p1.cima_p();
     p1.mostrar_pila();
 
     p1.desapilar();
     p1.mostrar_pila();
+    p1.cima_p();
   }
 }

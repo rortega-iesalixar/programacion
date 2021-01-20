@@ -4,11 +4,19 @@ import java.util.Arrays;
 
 public class PilaTabla {
   // Atributos.
-  int[] pila;
+  private Integer[] pila;
+  private int t_defecto = 0;
+  private int cima_pila;
 
   // Constructor.
   public PilaTabla() {
-    this.pila = new int[0];
+    pila = new Integer[t_defecto];
+    cima_pila = t_defecto;
+  }
+
+  // Método para mostrar la cima de la pila.
+  public void cima_p() {
+    System.out.println("La cima de la pila es el dato: " + pila[pila.length - 1]);
   }
 
   // Método para mostrar la pila.
@@ -17,18 +25,18 @@ public class PilaTabla {
   }
 
   // Método para apilar.
-  public void apilar(int num) {
-    this.pila = Arrays.copyOf(this.pila, this.pila.length + 1);
-    this.pila[this.pila.length - 1] = num;
+  public void apilar(Integer num) {
+    pila = Arrays.copyOf(pila, pila.length + 1);
+    pila[pila.length - 1] = num;
   }
 
   // Método para desapilar.
   public void desapilar() {
-    this.pila = Arrays.copyOf(this.pila, this.pila.length - 1);
+    pila = Arrays.copyOf(pila, pila.length - 1);
   }
 
   // Get
-  public int[] getPila() {
+  public Integer[] getPila() {
     return pila;
   }
 }
