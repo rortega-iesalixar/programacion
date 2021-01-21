@@ -23,6 +23,7 @@ public class Trenes {
     if (vagones.length < max_vagones) {
       // Crea vagones.
       Vagon v = new Vagon(cap_maxima_carga, cap_actual_carga, mercancia);
+      // Vagon v2 = new Vagon(cap_maxima_carga);
 
       vagones = Arrays.copyOf(vagones, vagones.length + 1);
       vagones[vagones.length - 1] = v;

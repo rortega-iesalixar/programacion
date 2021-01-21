@@ -1,19 +1,25 @@
 package U4.Entregable_1920;
 
-import java.util.Calendar;
+import java.util.Arrays;
 
 public class Pizzeria {
   // Atributos.
-  private int[] pizza;
-  private Size tamanio_pizza;
-  private Ingredientes[] ingredientes;
-  private int cantidad_ingredientes;
-  private int tamanio_inicial_pedidos;
-  private int pedidos_realizados;
-  private Calendar dia_pedido;
+  Pedidos[] pedido;
+  int indice_pedidos;
+  int tamanyo_pizzeria;
 
-  // Constructor 1.
+  public Pizzeria() {
+    this.pedido = new Pedidos[tamanyo_pizzeria];
+    this.indice_pedidos = 0;
+    this.tamanyo_pizzeria = 5;
+  }
 
-  // Constructor 2, tamaño FAMILIAR.
+  public void add_pedido(Pedidos pedido) {
+    this.pedido[indice_pedidos++] = pedido;
+  }
 
+  @Override
+  public String toString() {
+    return "Pizzeria{" + "pedido=" + Arrays.toString(pedido) + '}';
+  }
 }
