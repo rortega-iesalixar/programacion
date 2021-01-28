@@ -29,7 +29,7 @@ public class Escenario {
   // Método para Añadir Enemigo.
   public void add_enemigo() {
     if (indice_enemigos < 10) {
-
+      this.enemigos = Arrays.copyOf(this.enemigos, this.enemigos.length + 1);
       int num_alea;
       num_alea = (int) (Math.random() * tipos_enemigos.length);
 
@@ -114,6 +114,6 @@ public class Escenario {
   }
 
   public void setEnemigos() {
-    this.enemigos = new Enemigo[max_enemigos];
+    this.enemigos = new Enemigo[indice_enemigos];
   }
 }
