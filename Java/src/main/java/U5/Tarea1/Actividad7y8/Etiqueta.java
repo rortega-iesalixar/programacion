@@ -2,8 +2,8 @@ package U5.Tarea1.Actividad7y8;
 
 public class Etiqueta {
   // Atributos.
-  private String nombre;
-  private String direccion;
+  protected String nombre;
+  protected String direccion;
 
   // Constructor.
   public Etiqueta(String nombre, String direccion) {

@@ -15,11 +15,11 @@ package U5.Tarea1.Actividad7y8;
 
 public class Caja {
   // Atributos.
-  private double ancho;
-  private double alto;
-  private double fondo;
-  private Unidades unidad;
-  private Etiqueta etiquetas;
+  protected double ancho;
+  protected double alto;
+  protected double fondo;
+  protected Unidades unidad;
+  protected Etiqueta etiquetas;
 
   // Constructor.
   public Caja(double ancho, double alto, double fondo, Unidades u) {
@@ -32,7 +32,7 @@ public class Caja {
   // Método para devolver el volumen de la caja en metros cúbicos.
   public double getVolumen() {
     if (this.unidad == Unidades.M) {
-      return this.ancho + this.alto * this.fondo;
+      return this.ancho * this.alto * this.fondo;
     } else {
       return (this.ancho / 100) * (this.alto / 100) * (this.fondo / 100);
     }

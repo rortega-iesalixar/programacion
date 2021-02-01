@@ -11,5 +11,16 @@ public class main {
 
     cj1.add_etiqueta(eti1);
     System.out.println(cj1.toString());
+    System.out.println("");
+
+    CajaCarton ccarton1 = new CajaCarton(50, 80, 70);
+    CajaCarton ccarton2 = new CajaCarton(50, 80, 70);
+    CajaCarton ccarton3 = new CajaCarton(50, 80, 70);
+    EtiquetaNumerada etinum1 = new EtiquetaNumerada("Pedro", "C/Sin Número", 1);
+    ccarton1.add_EtiquetaNumerada(etinum1);
+    System.out.println("Info:" + ccarton1.toString());
+    System.out.println("El volumen de la caja es: " + ccarton1.getVolumen() + " metros cúbicos.");
+    ccarton1.envio_Caja(ccarton1);
+    ccarton1.total_carton();
   }
 }
