@@ -17,7 +17,8 @@ public class CajaCarton extends Caja {
   // Método para calcular el volumen de la caja de cartón.
   @Override
   public double getVolumen() {
-    return ((this.ancho / 100) * (this.alto / 100) * (this.fondo / 100)) * 0.80;
+    // return ((this.ancho / 100) * (this.alto / 100) * (this.fondo / 100)) * 0.80;
+    return super.getVolumen() * 0.80;
   }
 
   // Método para añadir la Etiqueta Numerada.
