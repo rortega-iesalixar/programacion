@@ -2,7 +2,7 @@ package U5.Tarea2.Actividad2;
 
 import java.util.Objects;
 
-public class Cliente {
+public class Cliente implements Comparable {
   // Atributos.
   private String dni;
   private String nombre;
@@ -44,8 +44,11 @@ public class Cliente {
   }
 
   @Override
-  public int hashCode() {
-    return 0;
+  public int compareTo(Object o) {
+    int resultado;
+    Cliente otro_c = (Cliente) o;
+
+    return (getDni().compareTo(otro_c.getDni()));
   }
 
   // Get and Set.

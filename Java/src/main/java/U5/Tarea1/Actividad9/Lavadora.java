@@ -1,6 +1,6 @@
 package U5.Tarea1.Actividad9;
 
-public class Lavadora extends Electrodomestico {
+public class Lavadora extends Electrodomestico implements Comparable {
   // Atributos.
   private int carga;
 
@@ -57,5 +57,20 @@ public class Lavadora extends Electrodomestico {
 
   public void setCarga(int carga) {
     this.carga = carga;
+  }
+
+  @Override
+  public int compareTo(Object o) {
+    int resultado;
+    Lavadora otra_lavadora = (Lavadora) o;
+
+    if (this.carga > otra_lavadora.carga) {
+      resultado = 1;
+    } else if (this.carga < otra_lavadora.carga) {
+      resultado = -1;
+    } else {
+      resultado = 0;
+    }
+    return resultado;
   }
 }

@@ -1,8 +1,11 @@
 package U5.Tarea1.Actividad9;
 
+import java.util.Arrays;
+
 public class main {
   public static void main(String[] args) {
     // Principal.
+    /*
     Electrodomestico[] Almacen = new Electrodomestico[10];
     Almacen[0] = new Electrodomestico();
     Almacen[1] = new Lavadora();
@@ -19,5 +22,18 @@ public class main {
       System.out.println(Almacen[i].toString());
       System.out.println();
     }
+    System.out.println();
+     */
+
+    Lavadora[] AlmaLavadoras = new Lavadora[3];
+    AlmaLavadoras[0] = new Lavadora(12);
+    AlmaLavadoras[1] = new Lavadora(45);
+    AlmaLavadoras[2] = new Lavadora(4);
+    //  Arrays.sort(AlmaLavadoras);
+
+    // ComparadorPrecioFinal comPrecioFinal = new ComparadorPrecioFinal();
+    Arrays.sort(AlmaLavadoras, new ComparadorPrecioFinal());
+
+    System.out.println(Arrays.toString(AlmaLavadoras));
   }
 }
