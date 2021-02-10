@@ -3,16 +3,12 @@ package U5.Tarea2.Actividad3;
 public class Cuadrado extends PoligonoRegular {
   // Constructor.
   public Cuadrado(double lado, ColorPoligoRegular color) {
-    setLado(lado);
-    setColor(color);
-    setContadorPoligonos(contadorPoligonos + 1);
+    super(lado, color);
   }
 
   // Constructor por defecto.
   public Cuadrado() {
-    setLado(10);
-    setColor(ColorPoligoRegular.AZUL);
-    setContadorPoligonos(contadorPoligonos + 1);
+    super();
   }
 
   // Método para conocer el área del Cuadrado.

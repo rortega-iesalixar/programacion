@@ -8,6 +8,6 @@ public class ComparadorTrianguloColor implements Comparator {
     Triangulo tri1 = (Triangulo) o1;
     Triangulo tri2 = (Triangulo) o2;
 
-    return tri1.getColor().compareTo(tri2.getColor());
+    return tri1.getColor().name().compareTo(tri2.getColor().name());
   }
 }

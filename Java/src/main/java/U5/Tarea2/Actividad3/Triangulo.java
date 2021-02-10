@@ -6,18 +6,14 @@ public class Triangulo extends PoligonoRegular implements Comparable {
 
   // Constructor.
   public Triangulo(double base, double altura, ColorPoligoRegular color) {
-    setLado(base);
+    super(base, color);
     setAltura(altura);
-    setColor(color);
-    setContadorPoligonos(contadorPoligonos + 1);
   }
 
   // Constructor por defecto.
   public Triangulo() {
-    setLado(10);
+    super();
     setAltura(10);
-    setColor(ColorPoligoRegular.AZUL);
-    setContadorPoligonos(contadorPoligonos + 1);
   }
 
   // Método para calcular área del Triángulo.
