@@ -18,8 +18,8 @@ public class main {
 
     Pico pico1 = new Pico(3);
     pico1.Deshacer(roc1);
-    // pico1.Deshacer(cris1);
-    // System.out.println(Almacen1.mostrarEstado());
+    pico1.Deshacer(cris1);
+    System.out.println(Almacen1.mostrarEstado());
     System.out.println("");
 
     Almacen1.ultimoMaterialQueQueda();

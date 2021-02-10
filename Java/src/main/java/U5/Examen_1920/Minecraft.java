@@ -32,6 +32,7 @@ public class Minecraft {
         for (int j = i; j < this.materiales.length - 1; j++) {
           this.materiales[j] = this.materiales[j + 1];
         }
+        i = -1;
         this.materiales = Arrays.copyOf(this.materiales, this.materiales.length - 1);
       }
     }
