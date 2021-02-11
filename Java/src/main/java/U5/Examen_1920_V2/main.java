@@ -1,5 +1,7 @@
 package U5.Examen_1920_V2;
 
+import java.util.Arrays;
+
 public class main {
   public static void main(String[] args) {
     // Principal.
@@ -18,20 +20,23 @@ public class main {
     System.out.println(Almacen1.mostrarEstado());
     System.out.println("");
 
-    Pico pico1 = new Pico(3);
-    pico1.Deshacer(roc1);
-    pico1.Deshacer(cris1);
-    pico1.Deshacer(metal1);
-    System.out.println(Almacen1.mostrarEstado());
-    System.out.println("");
+    // Pico pico1 = new Pico(3);
+    // pico1.Deshacer(roc1);
+    // pico1.Deshacer(cris1);
+    // pico1.Deshacer(metal1);
+    // System.out.println(Almacen1.mostrarEstado());
+    // System.out.println("");
 
-    Almacen1.ultimoMaterialQueQueda();
-    System.out.println("");
+    // Almacen1.ultimoMaterialQueQueda();
+    // System.out.println("");
 
-    Almacen1.borrarMaterialSinMasa();
-    System.out.println(Almacen1.mostrarEstado());
+    // Almacen1.borrarMaterialSinMasa();
+    // System.out.println(Almacen1.mostrarEstado());
 
-    Almacen1.add_Material(metal1);
+    // Almacen1.add_Material(metal1);
+    // System.out.println(Almacen1.mostrarEstado());
+
+    Arrays.sort(Almacen1.getMateriales());
     System.out.println(Almacen1.mostrarEstado());
   }
 }
