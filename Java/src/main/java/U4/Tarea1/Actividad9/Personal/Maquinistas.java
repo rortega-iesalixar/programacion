@@ -1,6 +1,8 @@
 package U4.Tarea1.Actividad9.Personal;
 
-public class Maquinistas {
+import java.io.Serializable;
+
+public class Maquinistas implements Serializable {
   // Atributos.
   private String nombre_completo;
   private String dni;

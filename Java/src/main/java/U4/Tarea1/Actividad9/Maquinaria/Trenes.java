@@ -2,9 +2,10 @@ package U4.Tarea1.Actividad9.Maquinaria;
 
 import U4.Tarea1.Actividad9.Personal.Maquinistas;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Trenes {
+public class Trenes implements Serializable {
   // Atributos.
   private Locomotoras locomotora;
   private Vagon[] vagones;

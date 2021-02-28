@@ -1,6 +1,8 @@
 package U4.Tarea1.Actividad9.Personal;
 
-public class Jefes_Estacion {
+import java.io.Serializable;
+
+public class Jefes_Estacion implements Serializable {
   // Atributos.
   private String nombre_completo;
   private String dni;

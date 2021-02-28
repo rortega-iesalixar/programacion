@@ -1,6 +1,8 @@
 package U4.Tarea1.Actividad9.Maquinaria;
 
-class Vagon {
+import java.io.Serializable;
+
+class Vagon implements Serializable {
   // Atributos.
   private long cap_maxima_carga;
   private long cap_actual_carga;
