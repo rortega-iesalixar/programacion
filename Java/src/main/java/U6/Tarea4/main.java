@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class main {
   public static void main(String[] args) {
     // Principal.
-    /*
+
     try {
       RegistroLibros Biblioteca = new RegistroLibros(4);
       Biblioteca.add_libro("28 Días", "Marcos");
@@ -24,7 +24,6 @@ public class main {
     Biblio.cargarRegistroDesdeFichero("registro.txt");
 
     System.out.println(Biblio.toString());
-    */
 
     try {
       RegistroLibros l1 = new RegistroLibros(2);
